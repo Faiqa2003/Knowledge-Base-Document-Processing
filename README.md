@@ -1,16 +1,68 @@
-# React + Vite
+# Knowledge Base Document Processing Automation
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+An automated document processing system built using n8n to validate uploaded documents, identify file formats, extract document content, and standardize results for further knowledge base processing.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project automates the initial document ingestion and processing pipeline for a knowledge base system.
 
-## React Compiler
+Users upload documents through an n8n form. The workflow validates the uploaded input and routes files to the appropriate processing path based on their file type.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Workflow Architecture
 
-## Expanding the Oxlint configuration
+1. Document Upload Form Trigger
+2. Validate and Identify File
+3. Input Validation
+4. Route by File Type
+5. Extract Document Content
+6. Standardize Successful Results
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Supported File Formats
+
+- PDF
+- Excel
+- CSV
+- TXT
+- DOCX
+- PPTX
+- Images (OCR processing)
+
+Unsupported file formats are handled through a separate response path.
+
+## Technologies Used
+
+- n8n – Workflow automation
+- Apache Tika – Document text extraction
+- OCR – Image text extraction
+- JavaScript – Data validation and transformation
+- Webhooks and Forms – Document input handling
+
+## Key Features
+
+- Automated document upload
+- File validation and identification
+- Conditional routing based on file type
+- Document text extraction
+- OCR processing for images
+- Standardized processing output
+- Error handling for invalid and unsupported files
+
+## Workflow Export
+
+The `workflow.json` file contains the exported n8n workflow.
+
+## Setup
+
+1. Import the workflow JSON into your n8n instance.
+2. Configure the required credentials and services.
+3. Configure the Apache Tika service if required.
+4. Test the document upload form.
+5. Upload supported documents and verify the output.
+
+## Project Status
+
+Completed – Document ingestion, validation, file routing, and content extraction workflow.
+
+## Author
+
+Developed as an automation and knowledge base engineering project.
