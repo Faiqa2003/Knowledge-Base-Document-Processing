@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -136,7 +135,7 @@ function App() {
   // =====================================
 
   const CHAT_WEBHOOK_URL =
-    "https://n8n.thinkcode.it/webhook-test/company-knowledge-chat";
+    "https://n8n.thinkcode.it/webhook/company-knowledge-chat";
 
   const KNOWLEDGE_SOURCES_URL =
     "https://n8n.thinkcode.it/webhook/knowledge-sources";
